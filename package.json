@@ -1,0 +1,16 @@
+{
+  "name": "modastyle-frontend",
+  "version": "1.0.0",
+  "description": "ModaStyle - Tienda de moda online",
+  "private": true,
+  "scripts": {
+    "dev": "serve ."
+  },
+  "dependencies": {
+    "foundation-sites": "^6.8.1",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

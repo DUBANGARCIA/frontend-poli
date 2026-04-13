@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Vestido Casual Elegante",
+    "category": "Vestidos",
+    "description": "Vestido casual perfecto para cualquier ocasión. Confeccionado con materiales de alta calidad y diseño moderno.",
+    "price": 89.99,
+    "stock": 25,
+    "image": "assets/images/product-vestido.png",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Jeans Denim Premium",
+    "category": "Pantalones",
+    "description": "Jeans de mezclilla premium con corte moderno y ajuste perfecto. Resistente y cómodo para uso diario.",
+    "price": 129.99,
+    "stock": 30,
+    "image": "assets/images/product-jeans.png",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Chaqueta de Cuero",
+    "category": "Abrigos",
+    "description": "Chaqueta de cuero sintético de alta calidad. Estilo moderno y versátil para completar tu look.",
+    "price": 199.99,
+    "stock": 15,
+    "image": "assets/images/product-chaqueta.png",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Zapatillas Deportivas",
+    "category": "Calzado",
+    "description": "Zapatillas deportivas blancas con diseño minimalista. Perfectas para uso casual o deportivo.",
+    "price": 79.99,
+    "stock": 40,
+    "image": "assets/images/product-zapatillas.png",
+    "featured": true
+  }
+]

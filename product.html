@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Producto - ModaStyle</title>
+  <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+  <link rel="stylesheet" href="node_modules/foundation-sites/dist/css/foundation.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="logo-link">
+        <img src="assets/images/logo-icon.svg" alt="ModaStyle logo" class="logo-icon">
+        <span class="logo-text">ModaStyle</span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-link">
+          <img src="assets/images/nav-home.svg" alt="" class="nav-icon"><span>Inicio</span>
+        </a>
+        <a href="catalog.html" class="nav-link is-active">
+          <img src="assets/images/nav-catalog.svg" alt="" class="nav-icon"><span>Catálogo</span>
+        </a>
+        <a href="#" class="nav-link">
+          <img src="assets/images/nav-promos.svg" alt="" class="nav-icon"><span>Promociones</span>
+        </a>
+        <a href="favorites.html" class="nav-link nav-fav-wrapper">
+          <img src="assets/images/nav-favorites.svg" alt="" class="nav-icon"><span>Favoritos</span>
+          <span class="fav-badge" id="fav-count">0</span>
+        </a>
+        <a href="#" class="nav-link">
+          <img src="assets/images/nav-about.svg" alt="" class="nav-icon"><span>Nosotros</span>
+        </a>
+        <a href="#contacto" class="nav-link">
+          <img src="assets/images/nav-contact.svg" alt="" class="nav-icon"><span>Contacto</span>
+        </a>
+        <a href="#" class="nav-link">
+          <img src="assets/images/nav-admin.svg" alt="" class="nav-icon"><span>Gestión</span>
+        </a>
+      </nav>
+      <button class="menu-toggle" aria-label="Abrir menú" id="menu-toggle">
+        <img src="assets/images/icon-menu.svg" alt="Menú">
+      </button>
+    </div>
+  </header>
+
+  <main class="product-detail-page">
+    <a href="catalog.html" class="back-btn">
+      <img src="assets/images/icon-arrow-left.svg" alt="" class="btn-icon">
+      Volver
+    </a>
+
+    <div class="product-detail">
+      <div class="product-detail__image" id="product-image">
+        <!-- Image injected by JS -->
+      </div>
+      <div class="product-detail__info" id="product-info">
+        <!-- Info injected by JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo-icon.svg" alt="ModaStyle" class="logo-icon">
+            <span class="logo-text">ModaStyle</span>
+          </div>
+          <p>Tu tienda de moda online con las últimas tendencias en ropa y accesorios. Calidad garantizada y envíos a todo el país.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Enlaces Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalog.html">Catálogo</a></li>
+            <li><a href="#">Promociones</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact" id="contacto">
+          <h3>Contacto</h3>
+          <ul>
+            <li><img src="assets/images/icon-mail.svg" alt="Email"><span>info@modastyle.com</span></li>
+            <li><img src="assets/images/icon-phone.svg" alt="Teléfono"><span>+57 300 123 4567</span></li>
+            <li><img src="assets/images/icon-location.svg" alt="Ubicación"><span>Bogotá, Colombia</span></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Síguenos</h3>
+          <div class="social-icons"><img src="assets/images/icon-social.svg" alt="Redes sociales"></div>
+          <div class="schedule">
+            <p>Horario de atención:</p>
+            <p>Lunes a Viernes: 9:00 - 18:00</p>
+            <p>Sábados: 10:00 - 14:00</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ModaStyle. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Templates -->
+  <template id="tpl-product-detail-info">
+    <div class="detail-top">
+      <p class="detail-category" data-field="category"></p>
+      <h1 class="detail-name" data-field="name"></h1>
+      <div class="detail-rating">
+        <img src="assets/images/icon-stars-row.svg" alt="" class="detail-stars">
+        <span class="detail-reviews" data-field="reviews"></span>
+      </div>
+      <p class="detail-price" data-field="price"></p>
+    </div>
+    <div class="detail-description">
+      <h3>Descripción</h3>
+      <p data-field="description"></p>
+    </div>
+    <div class="detail-colors">
+      <h3>Colores Disponibles</h3>
+      <div class="color-badges" data-field="colors"></div>
+    </div>
+    <div class="detail-sizes">
+      <h3>Tallas Disponibles</h3>
+      <div class="size-buttons" data-field="sizes"></div>
+    </div>
+    <p class="detail-stock" data-field="stock"></p>
+    <div class="detail-actions">
+      <button class="button button-dark detail-cart-btn">
+        <img src="assets/images/icon-cart.svg" alt="" class="btn-icon">
+        Agregar al Carrito
+      </button>
+      <button class="button detail-fav-btn">
+        <img src="assets/images/icon-heart-outline.svg" alt="Favorito">
+      </button>
+    </div>
+    <div class="detail-benefits" data-field="benefits"></div>
+  </template>
+
+  <template id="tpl-benefit-item">
+    <div class="detail-benefit">
+      <img data-field="benefit-icon" src="" alt="" class="detail-benefit__icon">
+      <div class="detail-benefit__text">
+        <p class="detail-benefit__title" data-field="benefit-title"></p>
+        <p class="detail-benefit__desc" data-field="benefit-desc"></p>
+      </div>
+    </div>
+  </template>
+
+  <script src="js/product.js"></script>
+</body>
+</html>

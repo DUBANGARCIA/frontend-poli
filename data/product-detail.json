@@ -1,0 +1,26 @@
+{
+  "id": 5,
+  "name": "Blusa Elegante",
+  "category": "Blusas",
+  "description": "Blusa elegante ideal para eventos formales o trabajo. Confección delicada y acabados de calidad.",
+  "price": 59.99,
+  "stock": 20,
+  "image": "assets/images/product-blusa.png",
+  "featured": false,
+  "reviews": 127,
+  "rating": 5,
+  "colors": ["Blanco", "Crema", "Rosa"],
+  "sizes": ["S", "M", "L"],
+  "benefits": [
+    {
+      "icon": "assets/images/icon-shipping.svg",
+      "title": "Envío Gratis",
+      "text": "En compras superiores a $200.000"
+    },
+    {
+      "icon": "assets/images/icon-shield.svg",
+      "title": "Compra Protegida",
+      "text": "Garantía de satisfacción del 100%"
+    }
+  ]
+}

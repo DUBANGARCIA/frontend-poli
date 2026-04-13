@@ -1,0 +1,82 @@
+[
+  {
+    "id": 5,
+    "name": "Blusa Elegante",
+    "category": "Blusas",
+    "description": "Blusa elegante ideal para eventos formales o trabajo. Confección delicada y acabados de calidad.",
+    "price": 59.99,
+    "stock": 20,
+    "image": "assets/images/product-blusa.png",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "name": "Camisa Formal",
+    "category": "Camisas",
+    "description": "Camisa formal para hombre con corte impecable. Perfecta para ocasiones especiales y uso profesional.",
+    "price": 69.99,
+    "stock": 35,
+    "image": "assets/images/product-camisa.png",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "name": "Camiseta Casual",
+    "category": "Camisetas",
+    "description": "Camiseta básica de algodón premium. Suave, cómoda y perfecta para el día a día.",
+    "price": 29.99,
+    "stock": 50,
+    "image": "assets/images/product-camiseta.png",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "name": "Chaqueta de Cuero",
+    "category": "Abrigos",
+    "description": "Chaqueta de cuero sintético de alta calidad. Estilo moderno y versátil para completar tu look.",
+    "price": 199.99,
+    "stock": 15,
+    "image": "assets/images/product-chaqueta.png",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Jeans Denim Premium",
+    "category": "Pantalones",
+    "description": "Jeans de mezclilla premium con corte moderno y ajuste perfecto. Resistente y cómodo para uso diario.",
+    "price": 129.99,
+    "stock": 30,
+    "image": "assets/images/product-jeans.png",
+    "featured": true
+  },
+  {
+    "id": 1,
+    "name": "Vestido Casual Elegante",
+    "category": "Vestidos",
+    "description": "Vestido casual perfecto para cualquier ocasión. Confeccionado con materiales de alta calidad y diseño moderno.",
+    "price": 89.99,
+    "stock": 25,
+    "image": "assets/images/product-vestido.png",
+    "featured": true
+  },
+  {
+    "id": 8,
+    "name": "Vestido Floral Verano",
+    "category": "Vestidos",
+    "description": "Vestido con estampado floral ideal para verano. Tela ligera y fresca con diseño romántico.",
+    "price": 79.99,
+    "stock": 18,
+    "image": "assets/images/product-vestido-floral.png",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "name": "Zapatillas Deportivas",
+    "category": "Calzado",
+    "description": "Zapatillas deportivas blancas con diseño minimalista. Perfectas para uso casual o deportivo.",
+    "price": 79.99,
+    "stock": 40,
+    "image": "assets/images/product-zapatillas.png",
+    "featured": true
+  }
+]
