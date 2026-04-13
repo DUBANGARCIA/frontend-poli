@@ -91,14 +91,26 @@
     toggle.addEventListener('click', function () { nav.classList.toggle('is-open'); });
   }
 
+  function initDetailFavorite(productId) {
+    var favBtn = document.querySelector('.detail-fav-btn');
+    if (!favBtn) return;
+    if (Favorites.isFavorite(productId)) favBtn.classList.add('is-active');
+    favBtn.addEventListener('click', function () {
+      var added = Favorites.toggle(productId);
+      favBtn.classList.toggle('is-active', added);
+    });
+  }
+
   function init() {
     fetchJSON('data/product-detail.json').then(function (product) {
       renderImage(product);
       renderInfo(product);
+      initDetailFavorite(product.id);
       document.title = product.name + ' - ModaStyle';
     }).catch(function (err) {
       console.error('Error:', err);
     });
+    Favorites.init();
     initMobileMenu();
   }
 

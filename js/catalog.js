@@ -163,7 +163,7 @@
     });
 
     initFilters();
-    initFavorites();
+    Favorites.init();
     initMobileMenu();
   }
 

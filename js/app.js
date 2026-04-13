@@ -133,7 +133,7 @@
     });
 
     initMobileMenu();
-    initFavorites();
+    Favorites.init();
     initSmoothScroll();
   }
 
