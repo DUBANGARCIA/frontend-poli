@@ -1,0 +1,48 @@
+<main class="catalog-page">
+  <div class="catalog-header">
+    <h1>Catálogo de Productos</h1>
+    <p>Explora nuestra colección completa de moda</p>
+  </div>
+
+  <div class="catalog-filters">
+    <div class="filter-search">
+      <input type="text"
+             class="filter-input"
+             placeholder="Buscar productos..."
+             [(ngModel)]="searchTerm"
+             (ngModelChange)="applyFilters()">
+    </div>
+    <div class="filter-select">
+      <select class="filter-input"
+              [(ngModel)]="selectedCategory"
+              (ngModelChange)="applyFilters()">
+        <option value="">Todas las categorías</option>
+        @for (category of categories; track category) {
+          <option [value]="category">{{ category }}</option>
+        }
+      </select>
+      <img src="assets/images/icon-chevron-down.svg" alt="" class="select-icon">
+    </div>
+    <div class="filter-select">
+      <select class="filter-input"
+              [(ngModel)]="sortBy"
+              (ngModelChange)="applyFilters()">
+        <option value="name-asc">Nombre (A-Z)</option>
+        <option value="name-desc">Nombre (Z-A)</option>
+        <option value="price-asc">Precio (menor a mayor)</option>
+        <option value="price-desc">Precio (mayor a menor)</option>
+      </select>
+      <img src="assets/images/icon-chevron-down.svg" alt="" class="select-icon">
+    </div>
+  </div>
+
+  <p class="catalog-count">
+    Mostrando {{ filteredProducts.length }} de {{ allProducts.length }} productos
+  </p>
+
+  <div class="products-grid">
+    @for (product of filteredProducts; track product.id) {
+      <app-product-card [product]="product" />
+    }
+  </div>
+</main>

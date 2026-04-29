@@ -1,0 +1,23 @@
+<main class="catalog-page">
+  <div class="catalog-header">
+    <h1>Mis Favoritos</h1>
+    @if (favoriteProducts$ | async; as favorites) {
+      <p>{{ favorites.length }} productos en favoritos</p>
+    }
+  </div>
+
+  @if (favoriteProducts$ | async; as favorites) {
+    @if (favorites.length > 0) {
+      <div class="products-grid">
+        @for (product of favorites; track product.id) {
+          <app-product-card [product]="product" />
+        }
+      </div>
+    } @else {
+      <div class="empty-state">
+        <p>No tienes productos en favoritos aún</p>
+        <a routerLink="/catalogo">Explorar el catálogo</a>
+      </div>
+    }
+  }
+</main>

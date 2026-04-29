@@ -1,0 +1,92 @@
+<!-- Hero Section -->
+<section class="hero" style="background-image: url('assets/images/hero-bg.png')">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Descubre Tu Estilo Único</h1>
+    <p>Las últimas tendencias en moda para ti. Calidad, estilo y comodidad en cada prenda.</p>
+    <div class="hero-buttons">
+      <a class="button button-primary" routerLink="/catalogo">
+        Explorar Catálogo
+        <img class="btn-icon" src="assets/images/icon-arrow-right.svg" alt="">
+      </a>
+      <a class="button button-outline" routerLink="/contacto">
+        Contáctanos
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits">
+  <div class="benefit-item">
+    <div class="benefit-icon">
+      <img src="assets/images/icon-envio.svg" alt="Envío Gratis">
+    </div>
+    <h3>Envío Gratis</h3>
+    <p>En compras superiores a $200.000</p>
+  </div>
+  <div class="benefit-item">
+    <div class="benefit-icon">
+      <img src="assets/images/icon-segura.svg" alt="Compra Segura">
+    </div>
+    <h3>Compra Segura</h3>
+    <p>Protección garantizada en todas tus compras</p>
+  </div>
+  <div class="benefit-item">
+    <div class="benefit-icon">
+      <img src="assets/images/icon-calidad.svg" alt="Calidad Premium">
+    </div>
+    <h3>Calidad Premium</h3>
+    <p>Productos seleccionados de alta calidad</p>
+  </div>
+</section>
+
+<!-- Featured Products Section -->
+<section class="featured-products">
+  <div class="section-header">
+    <h2>Productos Destacados</h2>
+    <p>Descubre nuestra selección de productos más populares y tendencias de la temporada</p>
+  </div>
+  <div class="products-grid">
+    @for (product of featuredProducts$ | async; track product.id) {
+      <app-product-card [product]="product" />
+    }
+  </div>
+  <div class="catalog-btn-wrapper">
+    <a class="button button-dark" routerLink="/catalogo">
+      Ver Todo el Catálogo
+      <img class="btn-icon" src="assets/images/icon-arrow-right-cta.svg" alt="">
+    </a>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+  <h2>Lo Que Dicen Nuestros Clientes</h2>
+  <div class="testimonials-grid">
+    @for (testimonial of testimonials$ | async; track testimonial.author) {
+      <div class="testimonial-card">
+        <div class="testimonial-card__stars">
+          @for (star of [].constructor(testimonial.stars); track $index) {
+            <img src="assets/images/icon-stars.svg" alt="estrella">
+          }
+        </div>
+        <p class="testimonial-card__text">"{{ testimonial.text }}"</p>
+        <p class="testimonial-card__author">{{ testimonial.author }}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section" style="background-image: url('assets/images/cta-bg.png')">
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <h2>¿Listo para Renovar tu Guardarropa?</h2>
+    <p>Únete a miles de clientes satisfechos y descubre la moda que te representa</p>
+    <a class="button button-primary" routerLink="/catalogo">
+      Comenzar a Comprar
+      <img class="btn-icon" src="assets/images/icon-arrow-right.svg" alt="">
+    </a>
+  </div>
+</section>

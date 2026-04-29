@@ -1,73 +1,59 @@
-# ModaStyle - Frontend
+# ModastyleAngular
 
-Tienda de moda online construida con HTML, CSS y JavaScript vanilla. Usa Foundation Sites para el grid/utilities y Normalize.css para reset.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
 
-## Requisitos
+## Development server
 
-- Node.js >= 18
-- pnpm
-
-## Instalación
+To start a local development server, run:
 
 ```bash
-pnpm install
+ng serve
 ```
 
-## Desarrollo
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+## Code scaffolding
+
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
 ```bash
-pnpm dev
+ng generate component component-name
 ```
 
-Abre `http://localhost:3000` en el navegador.
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-## Estructura del proyecto
-
-```
-├── index.html            # Home - hero, productos destacados, testimonios
-├── catalog.html          # Catálogo completo con filtros y búsqueda
-├── product.html          # Detalle de producto
-├── favorites.html        # Productos favoritos
-├── contact.html          # Formulario de contacto con validaciones
-├── css/
-│   └── styles.css        # Estilos globales (variables, componentes, responsive)
-├── js/
-│   ├── app.js            # Home - carga productos y testimonios
-│   ├── catalog.js        # Catálogo - filtros, búsqueda, ordenamiento
-│   ├── product.js        # Detalle de producto
-│   ├── favorites.js      # Módulo de favoritos (localStorage)
-│   ├── favorites-page.js # Página de favoritos
-│   └── contact.js        # Validación del formulario de contacto
-├── data/
-│   ├── products.json     # Productos destacados (home)
-│   ├── catalog.json      # Catálogo completo (8 productos)
-│   ├── testimonials.json # Testimonios de clientes
-│   └── product-detail.json # Detalle de producto de ejemplo
-└── assets/
-    └── images/           # Imágenes e iconos SVG desde Figma
+```bash
+ng generate --help
 ```
 
-## Tecnologías
+## Building
 
-- HTML5 semántico
-- CSS3 con custom properties
-- JavaScript vanilla (ES5+, sin frameworks)
-- Foundation Sites 6.9 (CSS grid/utilities)
-- Normalize.css 8.0
-- Google Fonts (Inter)
+To build the project run:
 
-## Funcionalidades
+```bash
+ng build
+```
 
-- Navegación responsive (mobile hamburger / desktop nav bar)
-- Productos cargados desde archivos JSON via fetch
-- Templates HTML con `<template>` + `cloneNode` (sin innerHTML)
-- Catálogo con búsqueda, filtro por categoría y ordenamiento
-- Sistema de favoritos persistente con localStorage
-- Formulario de contacto con validaciones HTML5 + JS custom
-- Smooth scroll en links internos
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Notas
+## Running unit tests
 
-- No se usan frameworks JS (React, Angular, Vue, etc.)
-- Las dependencias CSS se cargan desde `node_modules/` (local, no CDN)
-- Las imágenes fueron extraídas directamente desde Figma via MCP
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
