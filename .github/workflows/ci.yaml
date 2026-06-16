@@ -36,7 +36,7 @@ jobs:
         run: pnpm exec prettier --check "src/**/*.{ts,html,scss,css,json}" "*.{json,md}"
 
       - name: Security scan (Trivy filesystem)
-        uses: aquasecurity/trivy-action@0.36.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: fs
           scan-ref: .
