@@ -13,7 +13,7 @@ import { ProductCardComponent } from '../../components/product-card/product-card
   standalone: true,
   imports: [ProductCardComponent, RouterLink, AsyncPipe],
   templateUrl: './favorites.component.html',
-  styleUrl: './favorites.component.css'
+  styleUrl: './favorites.component.css',
 })
 export class FavoritesComponent implements OnInit {
   private productService = inject(ProductService);
@@ -24,11 +24,7 @@ export class FavoritesComponent implements OnInit {
   ngOnInit(): void {
     this.favoriteProducts$ = combineLatest([
       this.productService.getCatalogProducts(),
-      this.favoritesService.favorites$
-    ]).pipe(
-      map(([products, favIds]) =>
-        products.filter(p => favIds.includes(p.id))
-      )
-    );
+      this.favoritesService.favorites$,
+    ]).pipe(map(([products, favIds]) => products.filter((p) => favIds.includes(p.id))));
   }
 }

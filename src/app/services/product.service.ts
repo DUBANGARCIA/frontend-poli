@@ -10,28 +10,28 @@ export class ProductService {
 
   getCatalogProducts(): Observable<Product[]> {
     return this.http.get<Product[]>('data/catalog.json').pipe(
-      catchError(err => {
+      catchError((err) => {
         console.error('Error cargando catálogo:', err);
         return of([]);
-      })
+      }),
     );
   }
 
   getFeaturedProducts(): Observable<Product[]> {
     return this.http.get<Product[]>('data/products.json').pipe(
-      catchError(err => {
+      catchError((err) => {
         console.error('Error cargando productos destacados:', err);
         return of([]);
-      })
+      }),
     );
   }
 
   getProductDetail(): Observable<ProductDetail> {
     return this.http.get<ProductDetail>('data/product-detail.json').pipe(
-      catchError(err => {
+      catchError((err) => {
         console.error('Error cargando detalle de producto:', err);
         return of(null as any);
-      })
+      }),
     );
   }
 }

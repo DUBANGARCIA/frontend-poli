@@ -13,7 +13,7 @@ import { FavoritesService } from '../../services/favorites.service';
   standalone: true,
   imports: [RouterLink, CurrencyPipe, AsyncPipe],
   templateUrl: './product-detail.component.html',
-  styleUrl: './product-detail.component.css'
+  styleUrl: './product-detail.component.css',
 })
 export class ProductDetailComponent implements OnInit {
   private route = inject(ActivatedRoute);
@@ -26,10 +26,10 @@ export class ProductDetailComponent implements OnInit {
   isFavorite$!: Observable<boolean>;
 
   ngOnInit(): void {
-    this.productService.getProductDetail().subscribe(product => {
+    this.productService.getProductDetail().subscribe((product) => {
       this.product = product;
       this.isFavorite$ = this.favoritesService.favorites$.pipe(
-        map(favIds => favIds.includes(product.id))
+        map((favIds) => favIds.includes(product.id)),
       );
       this.cdr.markForCheck();
     });
