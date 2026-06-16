@@ -1,13 +1,15 @@
 <div class="product-card">
   <div class="product-card__image">
-    <img [src]="product.image" [alt]="product.name">
+    <img [src]="product.image" [alt]="product.name" />
     @if (product.featured) {
       <span class="product-card__badge">Destacado</span>
     }
-    <button class="product-card__heart"
-            [class.is-active]="isFavorite$ | async"
-            (click)="toggleFavorite($event)">
-      <img src="assets/images/icon-heart.svg" alt="Favorito">
+    <button
+      class="product-card__heart"
+      [class.is-active]="isFavorite$ | async"
+      (click)="toggleFavorite($event)"
+    >
+      <img src="assets/images/icon-heart.svg" alt="Favorito" />
     </button>
   </div>
   <div class="product-card__info">
@@ -15,14 +17,14 @@
     <h3 class="product-card__name">{{ product.name }}</h3>
     <p class="product-card__description">{{ product.description }}</p>
     <div class="product-card__meta">
-      <span class="product-card__price">{{ product.price | currency:'USD' }}</span>
+      <span class="product-card__price">{{ product.price | currency: 'USD' }}</span>
       <span class="product-card__stock">Stock: {{ product.stock }}</span>
     </div>
   </div>
   <div class="product-card__footer">
     <a [routerLink]="['/producto', product.id]" class="button button-dark">
       Ver Detalles
-      <img src="assets/images/icon-eye.svg" alt="" class="btn-icon">
+      <img src="assets/images/icon-eye.svg" alt="" class="btn-icon" />
     </a>
   </div>
 </div>

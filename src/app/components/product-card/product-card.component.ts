@@ -11,7 +11,7 @@ import { FavoritesService } from '../../services/favorites.service';
   standalone: true,
   imports: [RouterLink, CurrencyPipe, AsyncPipe],
   templateUrl: './product-card.component.html',
-  styleUrl: './product-card.component.css'
+  styleUrl: './product-card.component.css',
 })
 export class ProductCardComponent implements OnInit {
   private favoritesService = inject(FavoritesService);
@@ -22,7 +22,7 @@ export class ProductCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.isFavorite$ = this.favoritesService.favorites$.pipe(
-      map(favIds => favIds.includes(this.product.id))
+      map((favIds) => favIds.includes(this.product.id)),
     );
   }
 

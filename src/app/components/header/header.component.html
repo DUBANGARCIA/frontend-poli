@@ -1,49 +1,47 @@
 <header class="site-header">
   <div class="header-container">
     <a routerLink="/" class="logo-link">
-      <img src="assets/images/logo-icon.svg" alt="ModaStyle logo" class="logo-icon">
+      <img src="assets/images/logo-icon.svg" alt="ModaStyle logo" class="logo-icon" />
       <span class="logo-text">ModaStyle</span>
     </a>
 
     <nav class="main-nav" [class.is-open]="isMenuOpen()">
-      <a routerLink="/"
-         routerLinkActive="is-active"
-         [routerLinkActiveOptions]="{exact: true}"
-         class="nav-link"
-         (click)="closeMenu()">
-        <img src="assets/images/nav-home.svg" alt="" class="nav-icon">
+      <a
+        routerLink="/"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-link"
+        (click)="closeMenu()"
+      >
+        <img src="assets/images/nav-home.svg" alt="" class="nav-icon" />
         <span>Inicio</span>
       </a>
-      <a routerLink="/catalogo"
-         routerLinkActive="is-active"
-         class="nav-link"
-         (click)="closeMenu()">
-        <img src="assets/images/nav-catalog.svg" alt="" class="nav-icon">
+      <a routerLink="/catalogo" routerLinkActive="is-active" class="nav-link" (click)="closeMenu()">
+        <img src="assets/images/nav-catalog.svg" alt="" class="nav-icon" />
         <span>Catálogo</span>
       </a>
-      <a routerLink="/favoritos"
-         routerLinkActive="is-active"
-         class="nav-link"
-         (click)="closeMenu()">
-        <img src="assets/images/nav-favorites.svg" alt="" class="nav-icon">
+      <a
+        routerLink="/favoritos"
+        routerLinkActive="is-active"
+        class="nav-link"
+        (click)="closeMenu()"
+      >
+        <img src="assets/images/nav-favorites.svg" alt="" class="nav-icon" />
         <span class="nav-fav-wrapper">
           Favoritos
           @if (favCount$ | async; as count) {
-            <span class="fav-badge" style="display:flex">{{ count }}</span>
+            <span class="fav-badge" style="display: flex">{{ count }}</span>
           }
         </span>
       </a>
-      <a routerLink="/contacto"
-         routerLinkActive="is-active"
-         class="nav-link"
-         (click)="closeMenu()">
-        <img src="assets/images/nav-contact.svg" alt="" class="nav-icon">
+      <a routerLink="/contacto" routerLinkActive="is-active" class="nav-link" (click)="closeMenu()">
+        <img src="assets/images/nav-contact.svg" alt="" class="nav-icon" />
         <span>Contacto</span>
       </a>
     </nav>
 
     <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
-      <img src="assets/images/icon-menu.svg" alt="Menu">
+      <img src="assets/images/icon-menu.svg" alt="Menu" />
     </button>
   </div>
 </header>

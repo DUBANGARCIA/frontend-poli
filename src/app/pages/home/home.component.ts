@@ -13,7 +13,7 @@ import { Testimonial } from '../../models/testimonial.model';
   standalone: true,
   imports: [ProductCardComponent, RouterLink, AsyncPipe],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
   private productService = inject(ProductService);
