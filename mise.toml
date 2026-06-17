@@ -1,0 +1,19 @@
+[settings]
+experimental = true
+lockfile = true
+
+[tools]
+"core:bun" = "1.3.14"
+"core:node" = "22.13.0"
+"aqua:evilmartians/lefthook" = "2.1.8"
+"aqua:tamasfe/taplo" = "0.10.0"
+"aqua:aquasecurity/trivy" = "0.70.0"
+
+[env]
+
+[hooks]
+postinstall = "lefthook install"
+
+[tasks.setup]
+description = "Full project setup: install tools, hooks, and dependencies"
+run = ["mise trust", "mise install --yes", "bun install"]
