@@ -8,7 +8,7 @@ export class FavoritesService {
   private favoritesSubject = new BehaviorSubject<number[]>(this.loadFromStorage());
 
   favorites$ = this.favoritesSubject.asObservable();
-  count$ = this.favorites$.pipe(map(ids => ids.length));
+  count$ = this.favorites$.pipe(map((ids) => ids.length));
 
   private loadFromStorage(): number[] {
     try {
@@ -22,7 +22,9 @@ export class FavoritesService {
   private saveToStorage(ids: number[]): void {
     try {
       localStorage.setItem(this.STORAGE_KEY, JSON.stringify(ids));
-    } catch { /* silently fail */ }
+    } catch {
+      /* silently fail */
+    }
   }
 
   getAll(): number[] {

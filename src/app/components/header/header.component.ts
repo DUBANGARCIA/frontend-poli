@@ -8,7 +8,7 @@ import { FavoritesService } from '../../services/favorites.service';
   standalone: true,
   imports: [RouterLink, RouterLinkActive, AsyncPipe],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
   private favoritesService = inject(FavoritesService);
@@ -17,7 +17,7 @@ export class HeaderComponent {
   favCount$ = this.favoritesService.count$;
 
   toggleMenu(): void {
-    this.isMenuOpen.update(v => !v);
+    this.isMenuOpen.update((v) => !v);
   }
 
   closeMenu(): void {
