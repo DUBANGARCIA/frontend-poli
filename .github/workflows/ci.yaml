@@ -32,7 +32,7 @@ jobs:
             ${{ runner.os }}-bun-
 
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        run: bun install --frozen-lockfile --ignore-scripts
 
       - name: Format check (Prettier)
         run: bun run prettier --check "src/**/*.{ts,html,scss,css,json}" "*.{json,md}"
