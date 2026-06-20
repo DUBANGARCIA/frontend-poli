@@ -26,11 +26,11 @@ export class ProductService {
     );
   }
 
-  getProductDetail(): Observable<ProductDetail> {
+  getProductDetail(): Observable<ProductDetail | null> {
     return this.http.get<ProductDetail>('data/product-detail.json').pipe(
       catchError((err) => {
         console.error('Error cargando detalle de producto:', err);
-        return of(null as any);
+        return of(null);
       }),
     );
   }

@@ -19,4 +19,11 @@ export default tseslint.config(
       'no-console': 'warn',
     },
   },
+  {
+    files: ['src/app/**/*.ts'],
+    rules: {
+      // Angular components/modules are decorated empty classes by design.
+      '@typescript-eslint/no-extraneous-class': 'off',
+    },
+  },
 );
