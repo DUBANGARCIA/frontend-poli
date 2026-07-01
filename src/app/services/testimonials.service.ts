@@ -10,10 +10,10 @@ export class TestimonialsService {
 
   getTestimonials(): Observable<Testimonial[]> {
     return this.http.get<Testimonial[]>('data/testimonials.json').pipe(
-      catchError(err => {
+      catchError((err) => {
         console.error('Error cargando testimonios:', err);
         return of([]);
-      })
+      }),
     );
   }
 }

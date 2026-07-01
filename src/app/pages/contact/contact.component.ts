@@ -6,7 +6,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  styleUrl: './contact.component.css',
 })
 export class ContactComponent implements OnInit {
   private fb = inject(FormBuilder);
@@ -20,9 +20,9 @@ export class ContactComponent implements OnInit {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.pattern(/^[\d\s\+\-\(\)]{7,20}$/)]],
+      phone: ['', [Validators.pattern(/^[\d\s+\-()]{7,20}$/)]],
       subject: ['', [Validators.required, Validators.minLength(3)]],
-      message: ['', [Validators.required, Validators.minLength(10)]]
+      message: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
 
