@@ -1,0 +1,16 @@
+[tools]
+"core:bun" = "1.2.13"
+"aqua:evilmartians/lefthook" = "1.11.12"
+"aqua:tamasfe/taplo" = "0.9.3"
+"aqua:hadolint/hadolint" = "2.12.0"
+"aqua:mvdan/sh" = "3.9.0"
+"aqua:koalaman/shellcheck" = "0.10.0"
+
+[env]
+
+[hooks]
+postinstall = "lefthook install"
+
+[tasks.setup]
+description = "Full project setup: install tools, hooks, and dependencies"
+run = ["mise trust", "mise install --yes", "bun install"]

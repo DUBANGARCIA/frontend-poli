@@ -1,0 +1,73 @@
+env:
+  PATH: '$PATH:$HOME/.local/share/mise/shims:$HOME/.local/bin'
+
+pre-commit:
+  parallel: false
+  jobs:
+    - run: mise trust
+    - run: mise install --yes
+  commands:
+    prettier:
+      priority: 1
+      glob: '*.{js,cjs,mjs,ts,json,md,yaml,html}'
+      run: bun prettier --write --cache {staged_files}
+      stage_fixed: true
+    sort-package-json:
+      priority: 3
+      glob: '**/package.json'
+      run: bun sort-package-json {staged_files}
+      stage_fixed: true
+    toml:
+      priority: 4
+      glob: '*.toml'
+      run: mise exec -- taplo fmt {staged_files}
+      stage_fixed: true
+    hadolint:
+      priority: 5
+      glob: 'Dockerfile'
+      run: mise exec -- hadolint {staged_files}
+    shfmt:
+      priority: 6
+      glob: '*.sh'
+      run: mise exec -- shfmt --write {staged_files}
+      stage_fixed: true
+    shellcheck:
+      priority: 7
+      glob: '*.sh'
+      run: mise exec -- shellcheck {staged_files}
+
+commit-msg:
+  parallel: false
+  jobs:
+    - run: mise trust
+    - run: mise install --yes
+  commands:
+    commitlint:
+      priority: 1
+      run: bun commitlint --config commitlint.config.cjs --edit ""
+
+post-merge:
+  parallel: false
+  jobs:
+    - run: mise trust
+    - run: mise install --yes
+  commands:
+    bun-install:
+      glob: '{package.json,bun.lock,bunfig.toml}'
+      run: |
+        if [ ! -d node_modules ] || git diff --name-only ORIG_HEAD HEAD -- package.json bun.lock | grep -q .; then
+          bun install --frozen-lockfile
+        fi
+
+post-checkout:
+  parallel: false
+  jobs:
+    - run: mise trust
+    - run: mise install --yes
+  commands:
+    bun-install:
+      glob: '{package.json,bun.lock,bunfig.toml}'
+      run: |
+        if [ ! -d node_modules ] || git diff --name-only ORIG_HEAD HEAD -- package.json bun.lock | grep -q .; then
+          bun install --frozen-lockfile
+        fi
